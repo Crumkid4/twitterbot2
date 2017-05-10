@@ -133,22 +133,22 @@ var fs = require('fs');
 processing();
 
 function processing() {
-    console.log("uploaded image");
     var r = Math.floor((Math.random() * 721) + 1);
-
+    console.log("uploaded image");
+    
     var num = var r
 
-   // var name = 
+    var name = 
 
 
-    var filename = "img/" + num + ".png";
+        var filename = "img/" + var num + ".png";
 
     var parameters = {
         encoding: 'base64'
     }
     // Added this section 
     var tweet = {
-        status: 'Here is the current random pokemon ' + r + ' #pokemon'
+        status: 'Here is the current random pokemon ' + r + var name + ' #pokemon'
     }
 
     T.post('statuses/update', tweet, gotData);
