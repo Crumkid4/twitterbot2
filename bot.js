@@ -134,14 +134,20 @@ processing();
 
 function processing() {
     console.log("uploaded image");
-    var r = Math.floor((Math.random() * 721) + 1); 
-    var filename = "img/" + num + name + ".png"; 
+    var r = Math.floor((Math.random() * 721) + 1);
+
+    var num = var r
+
+   // var name = 
+
+
+    var filename = "img/" + num + ".png";
 
     var parameters = {
         encoding: 'base64'
     }
     // Added this section 
-var tweet = {
+    var tweet = {
         status: 'Here is the current random pokemon ' + r + ' #pokemon'
     }
 
@@ -155,9 +161,9 @@ var tweet = {
             console.log("It posted!");
         }
     }
-    
+
     // Added what is inbetween 5/10/17
-    
+
     var b64 = fs.readFileSync(filename, parameters);
 
     //i have to upload before i can tweet it
