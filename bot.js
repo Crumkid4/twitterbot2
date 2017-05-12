@@ -132,8 +132,8 @@ function tweetIt2(txt) {
 
 
 var fs = require('fs');
-processing();
-
+//processing();
+setInterval(processing,1000*60*60*24);
 function processing() {
     var r = Math.floor((Math.random() * 721)+1);
     if (r > 721) {
