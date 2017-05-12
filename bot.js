@@ -1,11 +1,13 @@
 var pokedex;
 var num;
 var name;
-var png:
+var png;
 
-    function preload() {
-        pokedex = loadJSON("pokedex.json");
-    }
+preload();
+
+function preload() {
+    pokedex = require('./pokedex.json'); //(with path)
+}
 
 //Tells our console that the bot is starting
 console.log("The Bot is starting now!");
@@ -134,21 +136,33 @@ processing();
 
 function processing() {
     var r = Math.floor((Math.random() * 721) + 1);
-    console.log("uploaded image");
-    
-    var num = var r
-
-    var name = 
+    if (r > 721) {
+        r = r - 1;
 
 
-        var filename = "img/" + var num + ".png";
+    }
+
+    console.log("choose picture");
+    if (r < 10) {
+        var num = "00" + r;
+    }
+    if (r < 100) {
+        var num = "0" + r;
+    }
+
+    var name =
+
+
+        var filename = "img/" +
+            var num + ".png";
 
     var parameters = {
         encoding: 'base64'
     }
     // Added this section 
     var tweet = {
-        status: 'Here is the current random pokemon ' + r + var name + ' #pokemon'
+        status: 'Here is the current random pokemon ' + r +
+            var name + ' #pokemon'
     }
 
     T.post('statuses/update', tweet, gotData);
