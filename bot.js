@@ -58,7 +58,7 @@ var T = new Twit({
 
 
 //POST TWEET
-tweetIt();
+//tweetIt();
 
 //setInterval(tweetIt, 1000*45);
 
@@ -159,22 +159,7 @@ function processing() {
     var parameters = {
         encoding: 'base64'
     }
-    // Added this section 
-    var tweet = {
-        status: 'Here is the current random pokemon #' + num +
-             name + ' #pokemon'
-    }
-
-    T.post('statuses/update', tweet, gotData);
-
-    function gotData(err, data, response) {
-        if (err) {
-            console.log("Something went wrong!");
-
-        } else {
-            console.log("It posted!");
-        }
-    }
+   
 
     // Added what is inbetween 5/10/17
 
@@ -191,7 +176,8 @@ function processing() {
         var id = data.media_id_string;
         var tweet = {
 
-            status: '#ECS2017 live from node.js',
+            status: 'Here is the current random pokemon #' + num +
+             name + ' #pokemon',
             media_ids: [id]
         }
 
