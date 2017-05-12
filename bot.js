@@ -135,7 +135,7 @@ var fs = require('fs');
 processing();
 
 function processing() {
-    var r = Math.floor((Math.random() * 721) + 1);
+    var r = Math.floor((Math.random() * 721)+1);
     if (r > 721) {
         r = r - 1;
 
@@ -143,26 +143,26 @@ function processing() {
     }
 
     console.log("choose picture");
+    var num = r;
     if (r < 10) {
-        var num = "00" + r;
+         num = "00" + r;
     }
     if (r < 100) {
-        var num = "0" + r;
+         num = "0" + r;
     }
 
-    var name =
+    var name = pokedex[r-1].ename;
 
 
-        var filename = "img/" +
-            var num + ".png";
+        var filename = "img/" + num + name + ".png";
 
     var parameters = {
         encoding: 'base64'
     }
     // Added this section 
     var tweet = {
-        status: 'Here is the current random pokemon ' + r +
-            var name + ' #pokemon'
+        status: 'Here is the current random pokemon #' + num +
+             name + ' #pokemon'
     }
 
     T.post('statuses/update', tweet, gotData);
